@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Muntazir Mehdi — Full Stack Developer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0a0f;
+      --surface: #111118;
+      --card: #16161f;
+      --border: #1e1e2e;
+      --accent: #e8a838;
+      --accent2: #c45f2a;
+      --text: #e2e2f0;
+      --muted: #6b6b88;
+      --green: #3dd68c;
+      --blue: #4a9eff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'JetBrains Mono', monospace;
+      overflow-x: hidden;
+      cursor: none;
+    }
+
+    /* Custom cursor */
+    .cursor {
+      width: 10px; height: 10px;
+      background: var(--accent);
+      border-radius: 50%;
+      position: fixed;
+      pointer-events: none;
+      z-index: 9999;
+      transition: transform 0.1s;
+      mix-blend-mode: difference;
+    }
+    .cursor-ring {
+      width: 36px; height: 36px;
+      border: 1px solid var(--accent);
+      border-radius: 50%;
+      position: fixed;
+      pointer-events: none;
+      z-index: 9998;
+      transition: all 0.15s ease;
+      opacity: 0.5;
+    }
+
+    /* Noise overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.4;
+    }
+
+    /* Grid background */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(232,168,56,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(232,168,56,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 3rem;
+      background: rgba(10,10,15,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+
+    /* SECTIONS */
+    section { position: relative; z-index: 2; }
+
+    /* HERO */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 8rem 3rem 4rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .hero-inner { max-width: 800px; }
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(232,168,56,0.08);
+      border: 1px solid rgba(232,168,56,0.2);
+      color: var(--accent);
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+      animation: fadeUp 0.6s ease both;
+    }
+    .hero-tag .dot {
+      width: 6px; height: 6px;
+      background: var(--green);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.8)} }
+
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      font-weight: 800;
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+      animation: fadeUp 0.6s 0.1s ease both;
+    }
+    h1 .line1 { display: block; color: var(--text); }
+    h1 .line2 { display: block; color: var(--accent); }
+
+    .hero-desc {
+      font-size: 0.9rem;
+      line-height: 1.8;
+      color: var(--muted);
+      max-width: 560px;
+      margin-bottom: 2.5rem;
+      animation: fadeUp 0.6s 0.2s ease both;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      animation: fadeUp 0.6s 0.3s ease both;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.75rem;
+      border-radius: 6px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      transition: all 0.2s;
+      cursor: none;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #0a0a0f;
+      font-weight: 500;
+    }
+    .btn-primary:hover { background: #f0b840; transform: translateY(-2px); }
+    .btn-ghost {
+      border: 1px solid var(--border);
+      color: var(--muted);
+    }
+    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+    .hero-stats {
+      display: flex;
+      gap: 3rem;
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      animation: fadeUp 0.6s 0.4s ease both;
+    }
+    .stat-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--accent);
+    }
+    .stat-label { font-size: 0.68rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 0.2rem; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ABOUT / EXPERIENCE SECTION */
+    .section-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 6rem 3rem;
+    }
+    .section-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+    .section-label::before { content: '// '; }
+    .section-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 800;
+      margin-bottom: 3rem;
+      line-height: 1.1;
+    }
+
+    /* EXPERIENCE TIMELINE */
+    .timeline { position: relative; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, transparent, var(--accent), transparent);
+    }
+    .timeline-item {
+      padding-left: 2.5rem;
+      margin-bottom: 3rem;
+      position: relative;
+      opacity: 0;
+      transform: translateX(-16px);
+      transition: all 0.5s ease;
+    }
+    .timeline-item.visible { opacity: 1; transform: translateX(0); }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -4px; top: 6px;
+      width: 9px; height: 9px;
+      background: var(--accent);
+      border-radius: 50%;
+      border: 2px solid var(--bg);
+    }
+    .job-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem; }
+    .job-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .job-period {
+      font-size: 0.7rem;
+      color: var(--muted);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+    }
+    .job-company {
+      font-size: 0.78rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    .job-bullets { list-style: none; }
+    .job-bullets li {
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.7;
+      padding-left: 1rem;
+      position: relative;
+      margin-bottom: 0.4rem;
+    }
+    .job-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--accent2); }
+
+    /* SKILLS */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .skill-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: all 0.3s;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    .skill-card.visible { opacity: 1; transform: translateY(0); }
+    .skill-card:hover { border-color: var(--accent); transform: translateY(-4px); }
+    .skill-icon { font-size: 1.5rem; margin-bottom: 0.75rem; }
+    .skill-cat {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      color: var(--text);
+    }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .tag {
+      font-size: 0.68rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+    .tag.hot { border-color: rgba(232,168,56,0.3); color: var(--accent); }
+
+    /* PROJECTS */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 1.5rem;
+    }
+    .project-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.75rem;
+      transition: all 0.3s;
+      opacity: 0;
+      transform: translateY(20px);
+      text-decoration: none;
+      display: block;
+    }
+    .project-card.visible { opacity: 1; transform: translateY(0); }
+    .project-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 20px 60px rgba(232,168,56,0.08); }
+    .project-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem; }
+    .project-name {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .project-link { color: var(--muted); font-size: 0.8rem; transition: color 0.2s; }
+    .project-card:hover .project-link { color: var(--accent); }
+    .project-url { font-size: 0.7rem; color: var(--accent2); margin-bottom: 0.75rem; }
+    .project-desc { font-size: 0.78rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.25rem; }
+    .project-stack { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+
+    /* NETSUITE BADGE */
+    .netsuite-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(74,158,255,0.1);
+      border: 1px solid rgba(74,158,255,0.25);
+      color: var(--blue);
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      font-size: 0.68rem;
+    }
+
+    /* CONTACT */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    @media (max-width: 640px) { .contact-grid { grid-template-columns: 1fr; } }
+    .contact-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      text-decoration: none;
+      transition: all 0.3s;
+      cursor: none;
+    }
+    .contact-card:hover { border-color: var(--accent); transform: translateX(4px); }
+    .contact-icon { font-size: 1.2rem; }
+    .contact-label { font-size: 0.7rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; }
+    .contact-value { font-size: 0.85rem; color: var(--text); margin-top: 0.2rem; }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.7rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      position: relative;
+      z-index: 2;
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      #hero { padding: 7rem 1.5rem 3rem; }
+      .section-wrap { padding: 4rem 1.5rem; }
+      .hero-stats { gap: 2rem; }
+      .projects-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
+  </style>
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">MM.dev</div>
+    <ul class="nav-links">
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-inner">
+      <div class="hero-tag">
+        <span class="dot"></span>
+        Available for opportunities · Dubai, UAE
+      </div>
+      <h1>
+        <span class="line1">Muntazir</span>
+        <span class="line2">Mehdi.</span>
+      </h1>
+      <p class="hero-desc">
+        Full Stack Developer with 5+ years crafting robust web applications, 
+        REST APIs, and enterprise integrations. Specializing in Laravel, React, 
+        WordPress & NetSuite — building performant, scalable digital products from Dubai.
+      </p>
+      <div class="hero-cta">
+        <a href="mailto:muntazirmehdi214.dev@gmail.com" class="btn btn-primary">✉ Get in Touch</a>
+        <a href="https://www.linkedin.com/in/muntazir-mehdi-dev" target="_blank" class="btn btn-ghost">LinkedIn ↗</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="stat-num">5+</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div>
+          <div class="stat-num">90+</div>
+          <div class="stat-label">Projects Delivered</div>
+        </div>
+        <div>
+          <div class="stat-num">15+</div>
+          <div class="stat-label">Technologies</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="section-wrap">
+      <div class="section-label">Career</div>
+      <h2 class="section-title">Work Experience</h2>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="job-header">
+            <div class="job-title">Full Stack Developer &amp; NetSuite Integrations</div>
+            <span class="job-period">2022 — Present</span>
+          </div>
+          <div class="job-company">Tresbizz Computer Equipment &amp; Requisites Trading L.L.C — Dubai, UAE</div>
+          <ul class="job-bullets">
+            <li>Integrated NetSuite ERP with external platforms via SuiteScript and REST APIs — syncing inventory, customer records, and order data in real time.</li>
+            <li>Built custom NetSuite Saved Searches and reports to surface KPIs for finance and operations teams.</li>
+            <li>Developed and maintained Laravel-based web applications with custom modules for user management, reporting, and dynamic dashboards.</li>
+            <li>Built RESTful APIs using Laravel to integrate with mobile apps and third-party platforms.</li>
+            <li>Implemented RBAC, authentication (Breeze / Sanctum / Passport), and secure middleware.</li>
+            <li>Designed and optimized Eloquent ORM queries across large datasets for performance and data integrity.</li>
+            <li>Deployed and maintained applications on cPanel, Hostinger, and GoDaddy.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <div class="job-header">
+            <div class="job-title">PHP Developer</div>
+            <span class="job-period">Jul 2019 — Jan 2023</span>
+          </div>
+          <div class="job-company">Wadic — Lahore, Pakistan</div>
+          <ul class="job-bullets">
+            <li>Built React.js frontend for real-time analytics dashboards with Redux state management.</li>
+            <li>Consumed REST APIs and assisted in backend development of admin modules using Laravel and MySQL.</li>
+            <li>Collaborated with designers using Figma to translate UI/UX into responsive layouts.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <div class="job-header">
+            <div class="job-title">Junior PHP Developer</div>
+            <span class="job-period">Jan 2019 — Jul 2019</span>
+          </div>
+          <div class="job-company">Asia Soles — Lahore, Pakistan</div>
+          <ul class="job-bullets">
+            <li>Customized WordPress themes and built responsive landing pages.</li>
+            <li>Installed and configured WooCommerce, Elementor, and WPBakery.</li>
+            <li>Participated in client meetings, requirement analysis, and site planning.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <div class="job-header">
+            <div class="job-title">Freelance Full Stack Developer</div>
+            <span class="job-period">2022 — Present</span>
+          </div>
+          <div class="job-company">Remote &amp; Dubai</div>
+          <ul class="job-bullets">
+            <li>Developed 90+ dynamic websites and e-commerce platforms using OpenCart, Laravel, WordPress, and custom PHP.</li>
+            <li>Integrated payment gateways (Stripe, PayPal), user dashboards, and admin panels.</li>
+            <li>Created custom WordPress plugins and themes from scratch for client-specific requirements.</li>
+            <li>Migrated websites, performed speed optimization, and implemented on-page SEO.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-wrap">
+      <div class="section-label">Capabilities</div>
+      <h2 class="section-title">Technical Skills</h2>
+      <div class="skills-grid">
+
+        <div class="skill-card">
+          <div class="skill-icon">⚙️</div>
+          <div class="skill-cat">Backend & Frameworks</div>
+          <div class="skill-tags">
+            <span class="tag hot">PHP</span>
+            <span class="tag hot">Laravel</span>
+            <span class="tag">YII</span>
+            <span class="tag">REST APIs</span>
+            <span class="tag">JWT Auth</span>
+            <span class="tag">MVC</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon">🔷</div>
+          <div class="skill-cat">NetSuite ERP</div>
+          <div class="skill-tags">
+            <span class="tag hot">SuiteScript 2.x</span>
+            <span class="tag hot">NetSuite REST API</span>
+            <span class="tag">Saved Searches</span>
+            <span class="tag">Custom Records</span>
+            <span class="tag">Workflows</span>
+            <span class="tag">ERP Integration</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon">⚛️</div>
+          <div class="skill-cat">Frontend</div>
+          <div class="skill-tags">
+            <span class="tag hot">React.js</span>
+            <span class="tag">Redux</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">HTML5</span>
+            <span class="tag">CSS3</span>
+            <span class="tag">Bootstrap</span>
+            <span class="tag">jQuery</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon">🗄️</div>
+          <div class="skill-cat">Databases</div>
+          <div class="skill-tags">
+            <span class="tag hot">MySQL</span>
+            <span class="tag">Firebase</span>
+            <span class="tag">Eloquent ORM</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon">🌐</div>
+          <div class="skill-cat">CMS & E-Commerce</div>
+          <div class="skill-tags">
+            <span class="tag hot">WordPress</span>
+            <span class="tag hot">WooCommerce</span>
+            <span class="tag">OpenCart</span>
+            <span class="tag">Shopify</span>
+            <span class="tag">Wix</span>
+            <span class="tag">Elementor</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon">🛠️</div>
+          <div class="skill-cat">Tools & DevOps</div>
+          <div class="skill-tags">
+            <span class="tag">Git</span>
+            <span class="tag">Bitbucket</span>
+            <span class="tag">Postman</span>
+            <span class="tag">Figma</span>
+            <span class="tag">Trello</span>
+            <span class="tag">cPanel</span>
+            <span class="tag">SEO</span>
+            <span class="tag">Agile</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-wrap">
+      <div class="section-label">Portfolio</div>
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="projects-grid">
+
+        <a href="https://tresbizz.com" target="_blank" class="project-card">
+          <div class="project-header">
+            <div class="project-name">Tresbizz</div>
+            <span class="project-link">↗</span>
+          </div>
+          <div class="project-url">tresbizz.com</div>
+          <p class="project-desc">Enterprise software licensing platform with custom admin panel, vendor API integrations, and full CMS. NetSuite ERP connected for automated order and inventory sync.</p>
+          <div class="project-stack">
+            <span class="tag hot">Laravel</span>
+            <span class="netsuite-badge">◆ NetSuite</span>
+            <span class="tag">REST API</span>
+            <span class="tag">MySQL</span>
+          </div>
+        </a>
+
+        <a href="https://arabian-desire.com" target="_blank" class="project-card">
+          <div class="project-header">
+            <div class="project-name">Arabian Desire</div>
+            <span class="project-link">↗</span>
+          </div>
+          <div class="project-url">arabian-desire.com</div>
+          <p class="project-desc">Online luxury nightwear store with advanced product filters, fully responsive design, and WhatsApp + TikTok channels integrated for high conversions.</p>
+          <div class="project-stack">
+            <span class="tag hot">WooCommerce</span>
+            <span class="tag">WordPress</span>
+            <span class="tag">WhatsApp API</span>
+          </div>
+        </a>
+
+        <a href="https://exoticwheels.com" target="_blank" class="project-card">
+          <div class="project-header">
+            <div class="project-name">Exotic Wheels</div>
+            <span class="project-link">↗</span>
+          </div>
+          <div class="project-url">exoticwheels.com</div>
+          <p class="project-desc">Luxury car rental platform in Dubai built from scratch. Custom booking modules, dynamic pricing engine, Google Maps integration, and WhatsApp lead capture.</p>
+          <div class="project-stack">
+            <span class="tag hot">Laravel</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Google Maps</span>
+            <span class="tag">MySQL</span>
+          </div>
+        </a>
+
+        <a href="https://mdpocket.com" target="_blank" class="project-card">
+          <div class="project-header">
+            <div class="project-name">MDPocket</div>
+            <span class="project-link">↗</span>
+          </div>
+          <div class="project-url">mdpocket.com</div>
+          <p class="project-desc">E-commerce platform for medical pocket references. Contributed to custom theme development, plugin integration, and checkout flow optimization.</p>
+          <div class="project-stack">
+            <span class="tag hot">WordPress</span>
+            <span class="tag">WooCommerce</span>
+            <span class="tag">PHP</span>
+          </div>
+        </a>
+
+        <a href="https://roofscope.com" target="_blank" class="project-card">
+          <div class="project-header">
+            <div class="project-name">RoofScope</div>
+            <span class="project-link">↗</span>
+          </div>
+          <div class="project-url">roofscope.com</div>
+          <p class="project-desc">Web-based property and roofing report tool. Enhanced WordPress backend, improved CRM data flow and reporting pipelines, implemented speed & SEO optimizations.</p>
+          <div class="project-stack">
+            <span class="tag hot">WordPress</span>
+            <span class="tag">CRM Integration</span>
+            <span class="tag">SEO</span>
+            <span class="tag">PHP</span>
+          </div>
+        </a>
+
+        <div class="project-card" style="border-style: dashed; opacity:0.5;">
+          <div class="project-name" style="color:var(--muted)">90+ More Projects</div>
+          <div style="margin-top:0.5rem"></div>
+          <p class="project-desc">Web apps, e-commerce stores, REST APIs, and custom plugins delivered for clients across UAE, Pakistan, and globally.</p>
+          <div class="project-stack">
+            <span class="tag">OpenCart</span>
+            <span class="tag">Stripe</span>
+            <span class="tag">PayPal</span>
+            <span class="tag">Laravel</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-wrap">
+      <div class="section-label">Get In Touch</div>
+      <h2 class="section-title">Contact</h2>
+      <div class="contact-grid">
+        <a href="mailto:muntazirmehdi214.dev@gmail.com" class="contact-card">
+          <span class="contact-icon">✉</span>
+          <div>
+            <div class="contact-label">Email</div>
+            <div class="contact-value">muntazirmehdi214.dev@gmail.com</div>
+          </div>
+        </a>
+        <a href="tel:+971506599801" class="contact-card">
+          <span class="contact-icon">📱</span>
+          <div>
+            <div class="contact-label">Phone / WhatsApp</div>
+            <div class="contact-value">+971 506 599 801</div>
+          </div>
+        </a>
+        <a href="https://www.linkedin.com/in/muntazir-mehdi-dev" target="_blank" class="contact-card">
+          <span class="contact-icon">🔗</span>
+          <div>
+            <div class="contact-label">LinkedIn</div>
+            <div class="contact-value">linkedin.com/in/muntazir-mehdi-dev</div>
+          </div>
+        </a>
+        <div class="contact-card" style="cursor:default;">
+          <span class="contact-icon">📍</span>
+          <div>
+            <div class="contact-label">Location</div>
+            <div class="contact-value">Dubai, United Arab Emirates</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Designed &amp; built by Muntazir Mehdi · 2025 · Dubai, UAE</p>
+  </footer>
+
+  <script>
+    // Custom cursor
+    const cursor = document.getElementById('cursor');
+    const ring = document.getElementById('cursorRing');
+    let mx = 0, my = 0, rx = 0, ry = 0;
+    document.addEventListener('mousemove', e => {
+      mx = e.clientX; my = e.clientY;
+      cursor.style.left = mx - 5 + 'px';
+      cursor.style.top = my - 5 + 'px';
+    });
+    function animateRing() {
+      rx += (mx - rx) * 0.12;
+      ry += (my - ry) * 0.12;
+      ring.style.left = rx - 18 + 'px';
+      ring.style.top = ry - 18 + 'px';
+      requestAnimationFrame(animateRing);
+    }
+    animateRing();
+
+    // Scroll reveal
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.timeline-item, .skill-card, .project-card').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
