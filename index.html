@@ -419,6 +419,77 @@
   filter: grayscale(0%);
   opacity: 1;
 }
+
+.stats-and-clients {
+  background-color: #0a0a0a;
+  color: #f5a623;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 50px;
+}
+
+.stat .number {
+  font-size: 2rem;
+  font-weight: bold;
+  display: block;
+}
+
+.stat .label {
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  color: #aaa;
+}
+
+/* Client Carousel */
+.clients-carousel {
+  overflow: hidden;
+  width: 100%;
+  padding: 20px 0;
+  background-color: #0a0a0a;
+}
+
+.clients-track {
+  display: flex;
+  gap: 50px;
+  animation: scroll 20s linear infinite;
+}
+
+.clients-track img {
+  height: 50px;
+  object-fit: contain;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .stats {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .clients-track {
+    gap: 30px;
+  }
+
+  .clients-track img {
+    height: 40px;
+  }
+}
+
     
     @media (max-width: 640px) { .contact-grid { grid-template-columns: 1fr; } }
     .contact-card {
