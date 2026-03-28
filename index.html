@@ -420,49 +420,48 @@
   opacity: 1;
 }
 
-.stats-and-clients {
-  background-color: #0a0a0a;
-  color: #f5a623;
-  padding: 50px 0;
-  text-align: center;
-}
-
-.stats {
-  display: flex;
-  justify-content: center;
-  gap: 50px;
-  margin-bottom: 50px;
-}
-
-.stat .number {
-  font-size: 2rem;
-  font-weight: bold;
-  display: block;
-}
-
-.stat .label {
-  font-size: 0.8rem;
-  letter-spacing: 2px;
-  color: #aaa;
-}
-
-/* Client Carousel */
-.clients-carousel {
-  overflow: hidden;
+.logo-ticker-container {
   width: 100%;
-  padding: 20px 0;
-  background-color: #0a0a0a;
+  overflow: hidden;
+  padding: 40px 0;
+  background: var(--bg); /* Matches your dark theme */
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  
+  /* This creates the soft fade effect on the sides */
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
 }
 
-.clients-track {
+.logo-ticker-track {
   display: flex;
-  gap: 50px;
-  animation: scroll 20s linear infinite;
+  width: max-content;
+  gap: 60px;
+  animation: scrollLogos 30s linear infinite;
+  align-items: center;
 }
 
-.clients-track img {
-  height: 50px;
-  object-fit: contain;
+.logo-ticker-track img {
+  height: 35px; /* Consistent height for all logos */
+  width: auto;
+  filter: grayscale(100%) invert(1) brightness(0.8); /* Makes them white/silver for dark mode */
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.logo-ticker-track img:hover {
+  opacity: 1;
+  filter: grayscale(0%) invert(0) brightness(1); /* Reveal original color on hover */
+}
+
+@keyframes scrollLogos {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* Optional: Pause on hover */
+.logo-ticker-container:hover .logo-ticker-track {
+  animation-play-state: paused;
 }
 
 @keyframes scroll {
@@ -591,19 +590,32 @@
     
   </section>
 
-  <section>
-     <div class="clients-carousel">
-    <div class="clients-track">
-      <img src="https://private-user-images.githubusercontent.com/185511416/570897918-472bddcf-2ba7-4781-ba6b-491ceb5ed093.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NzQ3MzI1NzksIm5iZiI6MTc3NDczMjI3OSwicGF0aCI6Ii8xODU1MTE0MTYvNTcwODk3OTE4LTQ3MmJkZGNmLTJiYTctNDc4MS1iYTZiLTQ5MWNlYjVlZDA5My5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwMzI4JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDMyOFQyMTExMTlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1lMWYzNWM0OGZhMzExNTUyN2U4MTBiYzgwZGVmN2U0ZWY1NzQ1OGI3NTA5NjJkNGQzMGIzYzc4ZTAxOGRlYjRkJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.i9rnczkuPWZgyi7l4IoV11OlK_WyCso1YYpK0QVe6m8" alt="Client 1">
-      <img src="https://framerusercontent.com/images/TFNdvVCwx4TbCW3ERfHc917CZM.png?width=299&height=51" alt="Client 2">
-      <img src="https://framerusercontent.com/images/KElGghvGuL2MuIyTxDoCcJ6wXmA.png?width=137&height=56" alt="Client 3">
-      <img src="https://private-user-images.githubusercontent.com/185511416/570897912-98a1dbe8-3f68-42c5-8107-bf50acc7796a.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NzQ3MzIzNzAsIm5iZiI6MTc3NDczMjA3MCwicGF0aCI6Ii8xODU1MTE0MTYvNTcwODk3OTEyLTk4YTFkYmU4LTNmNjgtNDJjNS04MTA3LWJmNTBhY2M3Nzk2YS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwMzI4JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDMyOFQyMTA3NTBaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1jYmU3ZGM0ZjkyYTI0NWIyYjBhMjc5YTdhZTM4MGMxMzhiNDUwMjgwMThjNzJhZjNiMGVjOTIzNDVlOWZmOTc5JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.DA3EVzi_rylL3qU2In560YOYd8YRINl-689KTRCqggc" alt="Client 4">
-      <!-- Repeat logos to create continuous loop -->
-      <img src="https://framerusercontent.com/images/TFNdvVCwx4TbCW3ERfHc917CZM.png?width=299&height=51" alt="Client 1">
-      <img src="https://framerusercontent.com/images/KElGghvGuL2MuIyTxDoCcJ6wXmA.png?width=137&height=56" alt="Client 2">
+
+     <section id="clients">
+  <div class="logo-ticker-container">
+    <div class="logo-ticker-track">
+      <img src="https://framerusercontent.com/images/ZTVCW1r9RvHtyQW4SCe3WYLAIE.png" alt="Madison Lily">
+      <img src="https://framerusercontent.com/images/TFNdvVCwx4TbCW3ERfHc917CZM.png" alt="Pacifica">
+      <img src="https://framerusercontent.com/images/WXwATIadurOmekgmqGoj9jPpmQ.png" alt="Flavors United">
+      <img src="https://framerusercontent.com/images/pEqfTJ36combhZd245cH2NwpIMs.png" alt="Vigo Alessi">
+      <img src="https://framerusercontent.com/images/Irz0uoqgOA14dUt0d2hduQc.png" alt="FEI Retail">
+      <img src="https://framerusercontent.com/images/ZiIgvsinJzw5UJxbsOu0PbYehWU.png" alt="Assouline">
+      <img src="https://framerusercontent.com/images/YKmTTRI8S5W1Lqb0475VRseQp3U.png" alt="CFA Institute">
+      <img src="https://framerusercontent.com/images/KElGghvGuL2MuIyTxDoCcJ6wXmA.png" alt="Paylocity">
+      <img src="https://framerusercontent.com/images/coCqvvukNrvcukOjWcl35driqxM.png" alt="Sutton Fern">
+
+      <img src="https://framerusercontent.com/images/ZTVCW1r9RvHtyQW4SCe3WYLAIE.png" alt="Madison Lily">
+      <img src="https://framerusercontent.com/images/TFNdvVCwx4TbCW3ERfHc917CZM.png" alt="Pacifica">
+      <img src="https://framerusercontent.com/images/WXwATIadurOmekgmqGoj9jPpmQ.png" alt="Flavors United">
+      <img src="https://framerusercontent.com/images/pEqfTJ36combhZd245cH2ProteIMs.png" alt="Vigo Alessi">
+      <img src="https://framerusercontent.com/images/Irz0uoqgOA14dUt0d2hduQc.png" alt="FEI Retail">
+      <img src="https://framerusercontent.com/images/ZiIgvsinJzw5UJxbsOu0PbYehWU.png" alt="Assouline">
+      <img src="https://framerusercontent.com/images/YKmTTRI8S5W1Lqb0475VRseQp3U.png" alt="CFA Institute">
+      <img src="https://framerusercontent.com/images/KElGghvGuL2MuIyTxDoCcJ6wXmA.png" alt="Paylocity">
+      <img src="https://framerusercontent.com/images/coCqvvukNrvcukOjWcl35driqxM.png" alt="Sutton Fern">
     </div>
   </div>
-    
+
   </section>
   <!-- EXPERIENCE -->
   <section id="experience">
