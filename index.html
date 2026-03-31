@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Muntazir Mehdi — Full Stack Developer</title>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -144,17 +145,25 @@
     }
     @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.8)} }
 
-    h1 {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(3rem, 8vw, 6.5rem);
-      font-weight: 800;
-      line-height: 0.95;
-      letter-spacing: -0.02em;
-      margin-bottom: 1.5rem;
-      animation: fadeUp 0.6s 0.1s ease both;
-    }
-    h1 .line1 { display: block; color: var(--text); }
-    h1 .line2 { display: block; color: var(--accent); }
+  h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  font-weight: 700; /* changed from 800 */
+  line-height: 1.05; /* slightly more breathing space */
+  letter-spacing: -0.015em; /* smoother spacing */
+  margin-bottom: 1.5rem;
+}
+   h1 .line1 {
+  display: block;
+  color: var(--text);
+  font-weight: 600;
+}
+
+h1 .line2 {
+  display: block;
+  color: var(--accent);
+  font-weight: 700;
+}
 
     .hero-desc {
       font-size: 0.9rem;
