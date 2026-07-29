@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Muntazir Mehdi — Full Stack Developer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <title>Muntazir Mehdi — NetSuite Techno-Functional Consultant</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -27,7 +27,7 @@
     body {
       background: var(--bg);
       color: var(--text);
-      font-family: 'JetBrains Mono', monospace;
+      font-family: 'Inter', sans-serif;
       overflow-x: hidden;
       cursor: none;
     }
@@ -92,14 +92,15 @@
       border-bottom: 1px solid var(--border);
     }
     .nav-logo {
-      font-family: 'Syne', sans-serif;
-      font-weight: 800;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
       font-size: 1.1rem;
       color: var(--accent);
       letter-spacing: 0.05em;
     }
     .nav-links { display: flex; gap: 2rem; list-style: none; }
     .nav-links a {
+      font-family: 'JetBrains Mono', monospace;
       color: var(--muted);
       text-decoration: none;
       font-size: 0.75rem;
@@ -123,6 +124,7 @@
     }
     .hero-inner { max-width: 800px; }
     .hero-tag {
+      font-family: 'JetBrains Mono', monospace;
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
@@ -146,11 +148,11 @@
     @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.8)} }
 
   h1 {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   font-size: clamp(3rem, 8vw, 6.5rem);
-  font-weight: 700; /* changed from 800 */
-  line-height: 1.05; /* slightly more breathing space */
-  letter-spacing: -0.015em; /* smoother spacing */
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.015em;
   margin-bottom: 1.5rem;
 }
    h1 .line1 {
@@ -170,8 +172,8 @@ h1 .line2 {
   -webkit-text-fill-color: transparent;
 }
     .hero-desc {
-      font-size: 0.9rem;
-      line-height: 1.8;
+      font-size: 0.95rem;
+      line-height: 1.75;
       color: var(--muted);
       max-width: 560px;
       margin-bottom: 2.5rem;
@@ -218,12 +220,12 @@ h1 .line2 {
       animation: fadeUp 0.6s 0.4s ease both;
     }
     .stat-num {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: 2rem;
-      font-weight: 800;
+      font-weight: 700;
       color: var(--accent);
     }
-    .stat-label { font-size: 0.68rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 0.2rem; }
+    .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 0.2rem; }
 
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(24px); }
@@ -237,6 +239,7 @@ h1 .line2 {
       padding: 6rem 3rem;
     }
    .section-label {
+  font-family: 'JetBrains Mono', monospace;
   font-size: 0.7rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;
@@ -246,7 +249,7 @@ h1 .line2 {
 }
     .section-label::before { content: '// '; }
     .section-title {
-     font-family: 'Syne', sans-serif;
+     font-family: 'Space Grotesk', sans-serif;
   font-size: clamp(2rem, 4vw, 3.2rem);
   font-weight: 700;
   margin-bottom: 2.5rem;
@@ -284,12 +287,13 @@ h1 .line2 {
     }
     .job-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem; }
     .job-title {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: 1.1rem;
       font-weight: 700;
       color: var(--text);
     }
     .job-period {
+      font-family: 'JetBrains Mono', monospace;
       font-size: 0.7rem;
       color: var(--muted);
       background: var(--surface);
@@ -304,7 +308,7 @@ h1 .line2 {
     }
     .job-bullets { list-style: none; }
     .job-bullets li {
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       color: var(--muted);
       line-height: 1.7;
       padding-left: 1rem;
@@ -332,7 +336,7 @@ h1 .line2 {
     .skill-card:hover { border-color: var(--accent); transform: translateY(-4px); }
     .skill-icon { font-size: 1.5rem; margin-bottom: 0.75rem; }
     .skill-cat {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: 0.85rem;
       font-weight: 700;
       margin-bottom: 0.75rem;
@@ -340,6 +344,7 @@ h1 .line2 {
     }
     .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
     .tag {
+      font-family: 'JetBrains Mono', monospace;
       font-size: 0.68rem;
       padding: 0.2rem 0.5rem;
       border-radius: 4px;
@@ -371,15 +376,15 @@ h1 .line2 {
     .project-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 20px 60px rgba(232,168,56,0.08); }
     .project-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem; }
     .project-name {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: 1.05rem;
       font-weight: 700;
       color: var(--text);
     }
     .project-link { color: var(--muted); font-size: 0.8rem; transition: color 0.2s; }
     .project-card:hover .project-link { color: var(--accent); }
-    .project-url { font-size: 0.7rem; color: var(--accent2); margin-bottom: 0.75rem; }
-    .project-desc { font-size: 0.78rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.25rem; }
+    .project-url { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--accent2); margin-bottom: 0.75rem; }
+    .project-desc { font-size: 0.84rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.25rem; }
     .project-stack { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 
     /* NETSUITE BADGE */
@@ -402,110 +407,60 @@ h1 .line2 {
       gap: 1.5rem;
     }
 
-   
+    /* CLIENT LOGO TICKER */
+    .enterprise-client {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.14em;
+      color: var(--text);
+      opacity: 0.6;
+      white-space: nowrap;
+      transition: opacity 0.3s ease;
+    }
+    .enterprise-client:hover { opacity: 1; }
 
-.netsuite-clients {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  margin-top: 14px;
-  flex-wrap: wrap;
-}
+    .logo-ticker-container {
+      width: 100%;
+      overflow: hidden;
+      padding: 40px 0;
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+      mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    }
 
-.netsuite-clients a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 42px;
-  padding: 6px 16px;
-  border-radius: 8px;
-     background: rgb(255 240 240);
-    border: 1px solid rgb(255 255 255);
-}
+    .logo-ticker-track {
+      display: flex;
+      width: max-content;
+      gap: 60px;
+      animation: scrollLogos 40s linear infinite;
+      align-items: center;
+    }
 
-.netsuite-clients img {
-  height: 22px;
-  width: auto;
-  opacity: 0.9;
-  filter: grayscale(100%);
-  transition: all 0.3s ease;
-}
+    .logo-ticker-track img {
+      height: 35px;
+      width: auto;
+      filter: grayscale(100%) invert(1) brightness(0.8);
+      opacity: 0.6;
+      transition: opacity 0.3s ease;
+    }
 
-.netsuite-clients img:hover {
-  filter: grayscale(0%);
-  opacity: 1;
-}
+    .logo-ticker-track img:hover {
+      opacity: 1;
+      filter: grayscale(0%) invert(0) brightness(1);
+    }
 
-.logo-ticker-container {
-  width: 100%;
-  overflow: hidden;
-  padding: 40px 0;
-  background: var(--bg); /* Matches your dark theme */
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  
-  /* This creates the soft fade effect on the sides */
-  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
-  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
-}
+    @keyframes scrollLogos {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
 
-.logo-ticker-track {
-  display: flex;
-  width: max-content;
-  gap: 60px;
-  animation: scrollLogos 30s linear infinite;
-  align-items: center;
-}
+    .logo-ticker-container:hover .logo-ticker-track {
+      animation-play-state: paused;
+    }
 
-.logo-ticker-track img {
-  height: 35px; /* Consistent height for all logos */
-  width: auto;
-  filter: grayscale(100%) invert(1) brightness(0.8); /* Makes them white/silver for dark mode */
-  opacity: 0.6;
-  transition: opacity 0.3s ease;
-}
-
-.logo-ticker-track img:hover {
-  opacity: 1;
-  filter: grayscale(0%) invert(0) brightness(1); /* Reveal original color on hover */
-}
-
-@keyframes scrollLogos {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-
-/* Optional: Pause on hover */
-.logo-ticker-container:hover .logo-ticker-track {
-  animation-play-state: paused;
-}
-
-@keyframes scroll {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .stats {
-    flex-direction: column;
-    gap: 30px;
-  }
-
-  .clients-track {
-    gap: 30px;
-  }
-
-  .clients-track img {
-    height: 40px;
-  }
-}
-
-    
     @media (max-width: 640px) { .contact-grid { grid-template-columns: 1fr; } }
     .contact-card {
       background: var(--card);
@@ -521,11 +476,12 @@ h1 .line2 {
     }
     .contact-card:hover { border-color: var(--accent); transform: translateX(4px); }
     .contact-icon { font-size: 1.2rem; }
-    .contact-label { font-size: 0.7rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; }
+    .contact-label { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; }
     .contact-value { font-size: 0.85rem; color: var(--text); margin-top: 0.2rem; }
 
     /* FOOTER */
     footer {
+      font-family: 'JetBrains Mono', monospace;
       text-align: center;
       padding: 2rem;
       font-size: 0.7rem;
@@ -557,7 +513,7 @@ h1 .line2 {
 
   <!-- NAV -->
   <nav>
-    <div class="nav-logo">Mnutazir.dev</div>
+    <div class="nav-logo">Muntazir.dev</div>
     <ul class="nav-links">
       <li><a href="#experience">Experience</a></li>
       <li><a href="#skills">Skills</a></li>
@@ -571,16 +527,17 @@ h1 .line2 {
     <div class="hero-inner">
       <div class="hero-tag">
         <span class="dot"></span>
-        Available for opportunities · Dubai, UAE
+        Available for opportunities · Pakistan · Open to relocation
       </div>
       <h1>
         <span class="line1">Muntazir</span>
         <span class="line2">Mehdi.</span>
       </h1>
       <p class="hero-desc">
-        Full Stack Developer with 5+ years crafting robust web applications, 
-        REST APIs, and enterprise integrations. Specializing in Laravel, React, 
-        WordPress & NetSuite — building performant, scalable digital products from Dubai.
+        Oracle NetSuite Techno-Functional Consultant with 5+ years of ERP experience —
+        3+ years hands-on with NetSuite. I build SuiteScript 2.x customizations,
+        SuiteFlow automations, and Celigo integrations for multi-entity global clients,
+        backed by a full-stack background in Laravel and React.
       </p>
       <div class="hero-cta">
         <a href="mailto:muntazirmehdi214.dev@gmail.com" class="btn btn-primary">✉ Get in Touch</a>
@@ -589,63 +546,59 @@ h1 .line2 {
       <div class="hero-stats">
         <div>
           <div class="stat-num">5+</div>
-          <div class="stat-label">Years Experience</div>
+          <div class="stat-label">Years ERP Experience</div>
         </div>
         <div>
-          <div class="stat-num">90+</div>
-          <div class="stat-label">Projects Delivered</div>
+          <div class="stat-num">3+</div>
+          <div class="stat-label">Years on NetSuite</div>
         </div>
         <div>
-          <div class="stat-num">15+</div>
-          <div class="stat-label">Technologies</div>
+          <div class="stat-num">8+</div>
+          <div class="stat-label">Enterprise Clients</div>
         </div>
       </div>
     </div>
-
-
-    
   </section>
 
-
-    <section id="clients">
-       <div class="section-wrap" style="padding-bottom:0;">
-    <div class="section-label">Enterprise Experience</div>
-    <h2 class="section-title">Trusted by US & Global Companies</h2>
-    <p style="color:var(--muted); font-size:0.85rem; margin-bottom:20px; max-width:700px;">
-      Delivered NetSuite development, integrations, and enterprise solutions 
-      for leading US-based organizations and global brands.
-    </p>
-  </div>
-  <div class="logo-ticker-container">
-    <div class="logo-ticker-track">
-      <span class="enterprise-client">PEARSON CANADA</span>
-      <span class="enterprise-client">PUBLISHERS GROUP</span>
-      
-      <img src="https://framerusercontent.com/images/ZTVCW1r9RvHtyQW4SCe3WYLAIE.png" alt="Madison Lily">
-      <img src="https://framerusercontent.com/images/TFNdvVCwx4TbCW3ERfHc917CZM.png" alt="Pacifica">
-      <img src="https://framerusercontent.com/images/WXwATIadurOmekgmqGoj9jPpmQ.png" alt="Flavors United">
-      <img src="https://framerusercontent.com/images/pEqfTJ36combhZd245cH2NwpIMs.png" alt="Vigo Alessi">
-      <img src="https://framerusercontent.com/images/Irz0uoqgOA14dUt0d2hduQc.png" alt="FEI Retail">
-      <span class="enterprise-client">MOZO WORLD</span>
-      <img src="https://framerusercontent.com/images/ZiIgvsinJzw5UJxbsOu0PbYehWU.png" alt="Assouline">
-      <img src="https://framerusercontent.com/images/YKmTTRI8S5W1Lqb0475VRseQp3U.png" alt="CFA Institute">
-      <img src="https://framerusercontent.com/images/KElGghvGuL2MuIyTxDoCcJ6wXmA.png" alt="Paylocity">
-
-      <span class="enterprise-client">PEARSON CANADA</span>
-      <span class="enterprise-client">PUBLISHERS GROUP</span>
-      <img src="https://framerusercontent.com/images/ZTVCW1r9RvHtyQW4SCe3WYLAIE.png" alt="Madison Lily">
-      <img src="https://framerusercontent.com/images/TFNdvVCwx4TbCW3ERfHc917CZM.png" alt="Pacifica">
-      <img src="https://framerusercontent.com/images/WXwATIadurOmekgmqGoj9jPpmQ.png" alt="Flavors United">
-      <img src="https://framerusercontent.com/images/pEqfTJ36combhZd245cH2NwpIMs.png" alt="Vigo Alessi">
-      <img src="https://framerusercontent.com/images/Irz0uoqgOA14dUt0d2hduQc.png" alt="FEI Retail">
-      <span class="enterprise-client">MOZO WORLD</span>
-      <img src="https://framerusercontent.com/images/ZiIgvsinJzw5UJxbsOu0PbYehWU.png" alt="Assouline">
-      <img src="https://framerusercontent.com/images/YKmTTRI8S5W1Lqb0475VRseQp3U.png" alt="CFA Institute">
-      <img src="https://framerusercontent.com/images/KElGghvGuL2MuIyTxDoCcJ6wXmA.png" alt="Paylocity">
+  <!-- CLIENTS -->
+  <section id="clients">
+    <div class="section-wrap" style="padding-bottom:0;">
+      <div class="section-label">Enterprise Experience</div>
+      <h2 class="section-title">Trusted by US &amp; Global Companies</h2>
+      <p style="color:var(--muted); font-size:0.85rem; margin-bottom:20px; max-width:700px;">
+        NetSuite administration, development, and techno-functional consulting
+        delivered for US-based and global enterprise clients.
+      </p>
     </div>
-  </div>
-</section>
- 
+    <div class="logo-ticker-container">
+      <div class="logo-ticker-track">
+        <img src="https://framerusercontent.com/images/ZTVCW1r9RvHtyQW4SCe3WYLAIE.png" alt="Madison Lily Rugs">
+        <img src="https://framerusercontent.com/images/TFNdvVCwx4TbCW3ERfHc917CZM.png" alt="Pacifica Beauty">
+        <span class="enterprise-client">TEACHER CREATED MATERIALS</span>
+        <img src="https://framerusercontent.com/images/pEqfTJ36combhZd245cH2NwpIMs.png" alt="Vigo Alessi">
+        <img src="https://framerusercontent.com/images/Irz0uoqgOA14dUt0d2hduQc.png" alt="FEI Retail">
+        <span class="enterprise-client">HALO</span>
+        <img src="https://framerusercontent.com/images/ZiIgvsinJzw5UJxbsOu0PbYehWU.png" alt="Assouline">
+        <img src="https://framerusercontent.com/images/YKmTTRI8S5W1Lqb0475VRseQp3U.png" alt="CFA Institute">
+        <img src="https://framerusercontent.com/images/KElGghvGuL2MuIyTxDoCcJ6wXmA.png" alt="Paylocity">
+        <span class="enterprise-client">FORGENT POWER</span>
+        <span class="enterprise-client">SUTTON FINERIES</span>
+
+        <img src="https://framerusercontent.com/images/ZTVCW1r9RvHtyQW4SCe3WYLAIE.png" alt="Madison Lily Rugs">
+        <img src="https://framerusercontent.com/images/TFNdvVCwx4TbCW3ERfHc917CZM.png" alt="Pacifica Beauty">
+        <span class="enterprise-client">TEACHER CREATED MATERIALS</span>
+        <img src="https://framerusercontent.com/images/pEqfTJ36combhZd245cH2NwpIMs.png" alt="Vigo Alessi">
+        <img src="https://framerusercontent.com/images/Irz0uoqgOA14dUt0d2hduQc.png" alt="FEI Retail">
+        <span class="enterprise-client">HALO</span>
+        <img src="https://framerusercontent.com/images/ZiIgvsinJzw5UJxbsOu0PbYehWU.png" alt="Assouline">
+        <img src="https://framerusercontent.com/images/YKmTTRI8S5W1Lqb0475VRseQp3U.png" alt="CFA Institute">
+        <img src="https://framerusercontent.com/images/KElGghvGuL2MuIyTxDoCcJ6wXmA.png" alt="Paylocity">
+        <span class="enterprise-client">FORGENT POWER</span>
+        <span class="enterprise-client">SUTTON FINERIES</span>
+      </div>
+    </div>
+  </section>
+
   <!-- EXPERIENCE -->
   <section id="experience">
     <div class="section-wrap">
@@ -655,77 +608,58 @@ h1 .line2 {
 
         <div class="timeline-item">
           <div class="job-header">
-            <div class="job-title">Full Stack Developer &amp; NetSuite Integrations</div>
-            <span class="job-period">2022 — Present</span>
+            <div class="job-title">NetSuite Techno-Functional Developer &amp; Administrator</div>
+            <span class="job-period">Feb 2023 — Present</span>
           </div>
-          <div class="job-company">Tresbizz Computer Equipment &amp; Requisites Trading L.L.C — Dubai, UAE</div>
-        <ul class="job-bullets">
-          <li>Integrated NetSuite ERP with external platforms via SuiteScript and REST APIs — syncing inventory, customer records, and order data in real time.</li>
-          <li>
-Providing NetSuite Administration, Development, and Functional Consulting
-for enterprise clients including Halo, Teacher Created Materials, Pacifica Beauty, and Paylocity.
-</li>
-
-
-
-
-          <li>Built custom NetSuite Saved Searches and reports to surface KPIs for finance and operations teams.</li>
-          <li>Developed and maintained Laravel-based web applications with custom modules for user management, reporting, and dynamic dashboards.</li>
-          <li>Built RESTful APIs using Laravel to integrate with mobile apps and third-party platforms.</li>
-          <li>Implemented RBAC, authentication (Breeze / Sanctum / Passport), and secure middleware.</li>
-          <li>Designed and optimized Eloquent ORM queries across large datasets for performance and data integrity.</li>
-          <li>Deployed and maintained applications on cPanel, Hostinger, and GoDaddy.</li>
-          <li>Worked at TresBizz as a WordPress developer — developed custom themes and plugins, optimized websites for speed and SEO, and managed client websites.</li>
-          <li>Integrated third-party services and APIs into WordPress sites for e-commerce and lead generation projects.</li>
-        </ul>
-        </div>
-
-
-
-     
-        
-
-
-        
-        <div class="timeline-item">
-          <div class="job-header">
-            <div class="job-title">PHP Developer</div>
-            <span class="job-period">Jul 2019 — Jan 2023</span>
-          </div>
-          <div class="job-company">Wadic — Lahore, Pakistan</div>
-         <ul class="job-bullets">
-          <li>Built React.js frontends for real-time analytics dashboards with Redux state management.</li>
-          <li>Developed backend modules using Laravel, CakePHP, and Ruby on Rails with MySQL/SQL databases.</li>
-          <li>Designed and optimized database queries for performance and data integrity across multiple projects.</li>
-          <li>Consumed REST APIs and integrated third-party services for web applications.</li>
-          <li>Collaborated with designers using Figma to translate UI/UX designs into responsive layouts.</li>
-        </ul>
-        </div>
-
-        <div class="timeline-item">
-          <div class="job-header">
-            <div class="job-title">Junior PHP Developer</div>
-            <span class="job-period">Jan 2019 — Jul 2019</span>
-          </div>
-          <div class="job-company">Asia Soles — Lahore, Pakistan</div>
+          <div class="job-company">Tresbizz Computer Equipment Trading LLC — UAE (Remote)</div>
           <ul class="job-bullets">
-            <li>Customized WordPress themes and built responsive landing pages.</li>
-            <li>Installed and configured WooCommerce, Elementor, and WPBakery.</li>
-            <li>Participated in client meetings, requirement analysis, and site planning.</li>
+            <li>Key techno-functional contact for NetSuite across a multi-entity company — gathering requirements from Sales, Procurement, and Finance and turning them into configuration and custom development.</li>
+            <li>Ran fit-gap analysis and customized forms, custom records/segments, and saved searches to match business-specific workflows.</li>
+            <li>Owned end-to-end troubleshooting of a Shopify–NetSuite integration on Celigo (Integrator.io), keeping real-time two-way sync of orders, inventory, and customer data.</li>
+            <li>Engineered SuiteScript 2.x Map/Reduce scripts for large-scale datasets, cutting batch processing time by ~40%.</li>
+            <li>Designed SuiteFlow workflows and approval processes for order fulfillment, replenishment, and shipping — removing 8+ hours of manual reconciliation per week.</li>
+            <li>Administered roles, permissions, SuiteBundler deployments, and Sandbox-to-Production migrations with full functional documentation.</li>
+            <li>Built Saved Searches, SuiteAnalytics Workbooks, and KPI dashboards for operational reporting and UAT validation.</li>
           </ul>
         </div>
 
         <div class="timeline-item">
           <div class="job-header">
-            <div class="job-title">Freelance Full Stack Developer</div>
-            <span class="job-period">2022 — Present</span>
+            <div class="job-title">NetSuite &amp; Full Stack Developer</div>
+            <span class="job-period">2022 — Jan 2023</span>
           </div>
-          <div class="job-company">Remote &amp; Dubai</div>
+          <div class="job-company">Freelance — Remote</div>
           <ul class="job-bullets">
-            <li>Developed 90+ dynamic websites and e-commerce platforms using OpenCart, Laravel, WordPress, and custom PHP.</li>
-            <li>Integrated payment gateways (Stripe, PayPal), user dashboards, and admin panels.</li>
-            <li>Created custom WordPress plugins and themes from scratch for client-specific requirements.</li>
-            <li>Migrated websites, performed speed optimization, and implemented on-page SEO.</li>
+            <li>Delivered and supported 10+ web, eCommerce, and ERP projects for international clients including CFA Institute, Paylocity, and Pacifica Beauty.</li>
+            <li>Provided client-facing consulting on SuiteScript customizations, workflows, and mass-data integrations.</li>
+            <li>Built scalable REST APIs (Laravel) for mobile and third-party integrations.</li>
+            <li>Integrated Stripe and PayPal payment gateways, handling PCI compliance considerations.</li>
+            <li>Implemented JWT authentication and role-based access control across multiple SaaS products.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <div class="job-header">
+            <div class="job-title">PHP Developer</div>
+            <span class="job-period">2020 — 2022</span>
+          </div>
+          <div class="job-company">WADIC — Lahore, Pakistan</div>
+          <ul class="job-bullets">
+            <li>Built interactive frontend dashboards with React.js and Redux, improving internal reporting efficiency.</li>
+            <li>Integrated third-party APIs into Laravel backend services and supported cross-functional teams.</li>
+            <li>Worked with UI/UX designers to deliver responsive, accessible interfaces.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <div class="job-header">
+            <div class="job-title">Junior PHP Developer</div>
+            <span class="job-period">2020</span>
+          </div>
+          <div class="job-company">Asia Soles — Lahore, Pakistan</div>
+          <ul class="job-bullets">
+            <li>Customized WordPress themes and WooCommerce configurations for retail eCommerce clients.</li>
+            <li>Helped plan and develop new web projects, gaining hands-on full-stack experience.</li>
           </ul>
         </div>
 
@@ -741,80 +675,87 @@ for enterprise clients including Halo, Teacher Created Materials, Pacifica Beaut
       <div class="skills-grid">
 
         <div class="skill-card">
-          <div class="skill-icon">⚙️</div>
-          <div class="skill-cat">Backend & Frameworks</div>
-          <div class="skill-tags">
-            <span class="tag hot">PHP</span>
-            <span class="tag hot">Laravel</span>
-            <span class="tag">YII</span>
-            <span class="tag">REST APIs</span>
-            <span class="tag">JWT Auth</span>
-            <span class="tag">MVC</span>
-          </div>
-        </div>
-
-        <div class="skill-card">
           <div class="skill-icon">🔷</div>
           <div class="skill-cat">NetSuite ERP</div>
           <div class="skill-tags">
             <span class="tag hot">SuiteScript 2.x</span>
-            <span class="tag hot">NetSuite REST API</span>
+            <span class="tag hot">SuiteFlow</span>
+            <span class="tag hot">SuiteAnalytics</span>
+            <span class="tag">SuiteBuilder</span>
             <span class="tag">Saved Searches</span>
-            <span class="tag">Custom Records</span>
-            <span class="tag">Workflows</span>
-            <span class="tag">ERP Integration</span>
+            <span class="tag">Custom Records/Segments</span>
+            <span class="tag">Advanced PDF (FreeMarker)</span>
+            <span class="tag">Roles &amp; Permissions</span>
+            <span class="tag">SuiteBundler</span>
+            <span class="tag">SDF</span>
+            <span class="tag">CSV Imports</span>
+            <span class="tag">NetSuite WMS</span>
           </div>
         </div>
 
         <div class="skill-card">
-          <div class="skill-icon">⚛️</div>
-          <div class="skill-cat">Frontend</div>
+          <div class="skill-icon">🧭</div>
+          <div class="skill-cat">Functional &amp; Consulting</div>
           <div class="skill-tags">
-            <span class="tag hot">React.js</span>
-            <span class="tag">Redux</span>
-            <span class="tag">JavaScript</span>
-            <span class="tag">HTML5</span>
-            <span class="tag">CSS3</span>
-            <span class="tag">Bootstrap</span>
-            <span class="tag">jQuery</span>
+            <span class="tag hot">Requirements Gathering</span>
+            <span class="tag hot">Fit-Gap Analysis</span>
+            <span class="tag">Workflow &amp; Approval Design</span>
+            <span class="tag">UAT Support</span>
+            <span class="tag">Client Training</span>
+            <span class="tag">Dashboards &amp; KPIs</span>
+            <span class="tag">Documentation</span>
           </div>
         </div>
 
         <div class="skill-card">
-          <div class="skill-icon">🗄️</div>
-          <div class="skill-cat">Databases</div>
+          <div class="skill-icon">🔗</div>
+          <div class="skill-cat">Integrations</div>
           <div class="skill-tags">
-            <span class="tag hot">MySQL</span>
+            <span class="tag hot">Celigo (Integrator.io)</span>
+            <span class="tag hot">RESTlets</span>
+            <span class="tag">SuiteTalk</span>
+            <span class="tag">REST &amp; SOAP APIs</span>
+            <span class="tag">Shopify–NetSuite Sync</span>
+            <span class="tag">Stripe / PayPal</span>
+            <span class="tag">JWT Auth</span>
+            <span class="tag">JSON/XML</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon">⚙️</div>
+          <div class="skill-cat">Development</div>
+          <div class="skill-tags">
+            <span class="tag hot">JavaScript</span>
+            <span class="tag hot">SQL</span>
+            <span class="tag">PHP (Laravel)</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">React.js</span>
+            <span class="tag">MySQL</span>
             <span class="tag">Firebase</span>
-            <span class="tag">Eloquent ORM</span>
+            <span class="tag">HTML/CSS</span>
           </div>
         </div>
 
         <div class="skill-card">
           <div class="skill-icon">🌐</div>
-          <div class="skill-cat">CMS & E-Commerce</div>
+          <div class="skill-cat">CMS &amp; E-Commerce</div>
           <div class="skill-tags">
             <span class="tag hot">WordPress</span>
             <span class="tag hot">WooCommerce</span>
-            <span class="tag">OpenCart</span>
             <span class="tag">Shopify</span>
-            <span class="tag">Wix</span>
-            <span class="tag">Elementor</span>
           </div>
         </div>
 
         <div class="skill-card">
           <div class="skill-icon">🛠️</div>
-          <div class="skill-cat">Tools & DevOps</div>
+          <div class="skill-cat">Delivery &amp; Tools</div>
           <div class="skill-tags">
+            <span class="tag">Agile/Scrum</span>
             <span class="tag">Git</span>
             <span class="tag">Bitbucket</span>
             <span class="tag">Postman</span>
-            <span class="tag">Figma</span>
             <span class="tag">Trello</span>
-            <span class="tag">cPanel</span>
-            <span class="tag">SEO</span>
-            <span class="tag">Agile</span>
           </div>
         </div>
 
@@ -828,6 +769,45 @@ for enterprise clients including Halo, Teacher Created Materials, Pacifica Beaut
       <div class="section-label">Portfolio</div>
       <h2 class="section-title">Featured Projects</h2>
       <div class="projects-grid">
+
+        <div class="project-card">
+          <div class="project-header">
+            <div class="project-name">Shopify–NetSuite Integration</div>
+          </div>
+          <p class="project-desc">Owned real-time sync design and troubleshooting between Shopify and NetSuite via Celigo Integrator.io — removing data silos across order, inventory, and customer records.</p>
+          <div class="project-stack">
+            <span class="tag hot">Celigo</span>
+            <span class="netsuite-badge">◆ NetSuite</span>
+            <span class="tag">Shopify</span>
+            <span class="tag">REST APIs</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">
+            <div class="project-name">NetSuite Bulk Automation</div>
+          </div>
+          <p class="project-desc">Built and supported Map/Reduce scripts processing thousands of records per run — used for mass transaction creation, reporting, and data migration, with ~40% faster batch times.</p>
+          <div class="project-stack">
+            <span class="tag hot">SuiteScript 2.x</span>
+            <span class="netsuite-badge">◆ NetSuite</span>
+            <span class="tag">Map/Reduce</span>
+            <span class="tag">SQL</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">
+            <div class="project-name">Multi-Client Techno-Functional Support</div>
+          </div>
+          <p class="project-desc">Requirements gathering, configuration, and ongoing support for 8+ enterprise clients across retail, finance, and services — including VIGO, FEI, Assouline, CFA Institute, Paylocity, Sutton Fineries, Madison Lily Rugs, and Pacifica Beauty.</p>
+          <div class="project-stack">
+            <span class="netsuite-badge">◆ NetSuite</span>
+            <span class="tag">SuiteFlow</span>
+            <span class="tag">Saved Searches</span>
+            <span class="tag">UAT</span>
+          </div>
+        </div>
 
         <a href="https://tresbizz.com" target="_blank" class="project-card">
           <div class="project-header">
@@ -864,7 +844,7 @@ for enterprise clients including Halo, Teacher Created Materials, Pacifica Beaut
             <span class="project-link">↗</span>
           </div>
           <div class="project-url">exoticwheels.com</div>
-          <p class="project-desc">Luxury car rental platform in Dubai built from scratch. Custom booking modules, dynamic pricing engine, Google Maps integration, and WhatsApp lead capture.</p>
+          <p class="project-desc">Luxury car rental platform built from scratch. Custom booking modules, dynamic pricing engine, Google Maps integration, and WhatsApp lead capture.</p>
           <div class="project-stack">
             <span class="tag hot">Laravel</span>
             <span class="tag">JavaScript</span>
@@ -893,7 +873,7 @@ for enterprise clients including Halo, Teacher Created Materials, Pacifica Beaut
             <span class="project-link">↗</span>
           </div>
           <div class="project-url">roofscope.com</div>
-          <p class="project-desc">Web-based property and roofing report tool. Enhanced WordPress backend, improved CRM data flow and reporting pipelines, implemented speed & SEO optimizations.</p>
+          <p class="project-desc">Web-based property and roofing report tool. Enhanced WordPress backend, improved CRM data flow and reporting pipelines, implemented speed &amp; SEO optimizations.</p>
           <div class="project-stack">
             <span class="tag hot">WordPress</span>
             <span class="tag">CRM Integration</span>
@@ -903,14 +883,14 @@ for enterprise clients including Halo, Teacher Created Materials, Pacifica Beaut
         </a>
 
         <div class="project-card" style="border-style: dashed; opacity:0.5;">
-          <div class="project-name" style="color:var(--muted)">90+ More Projects</div>
+          <div class="project-name" style="color:var(--muted)">10+ More Projects</div>
           <div style="margin-top:0.5rem"></div>
-          <p class="project-desc">Web apps, e-commerce stores, REST APIs, and custom plugins delivered for clients across UAE, Pakistan, and globally.</p>
+          <p class="project-desc">Web apps, eCommerce stores, REST APIs, and ERP customizations delivered for clients across UAE, Pakistan, and globally.</p>
           <div class="project-stack">
-            <span class="tag">OpenCart</span>
+            <span class="tag">Laravel</span>
             <span class="tag">Stripe</span>
             <span class="tag">PayPal</span>
-            <span class="tag">Laravel</span>
+            <span class="tag">SuiteScript</span>
           </div>
         </div>
 
@@ -931,25 +911,13 @@ for enterprise clients including Halo, Teacher Created Materials, Pacifica Beaut
             <div class="contact-value">muntazirmehdi214.dev@gmail.com</div>
           </div>
         </a>
-        <a href="tel:+971506599801" class="contact-card">
+        <a href="tel:+923179630776" class="contact-card">
           <span class="contact-icon">📱</span>
           <div>
             <div class="contact-label">Phone / WhatsApp</div>
-             <span class="contact-label">Dubai (UAE):</span>
-            <div class="contact-value">+971 506 599 801</div>
+            <div class="contact-value">+92 317 9630776</div>
           </div>
         </a>
-
-         <a href="tel:+923179630776" class="contact-card">
-          <span class="contact-icon">📱</span>
-          <div>
-            <div class="contact-label">Phone / WhatsApp</div>
-             <span class="contact-label">Pakistan (PK):</span>
-            <div class="contact-value">+923179630776</div>
-          </div>
-        </a>
-
-       
         <a href="https://www.linkedin.com/in/muntazir-mehdi-dev" target="_blank" class="contact-card">
           <span class="contact-icon">🔗</span>
           <div>
@@ -961,7 +929,7 @@ for enterprise clients including Halo, Teacher Created Materials, Pacifica Beaut
           <span class="contact-icon">📍</span>
           <div>
             <div class="contact-label">Location</div>
-            <div class="contact-value">Dubai, United Arab Emirates</div>
+            <div class="contact-value">Pakistan · Open to international relocation</div>
           </div>
         </div>
       </div>
@@ -969,7 +937,7 @@ for enterprise clients including Halo, Teacher Created Materials, Pacifica Beaut
   </section>
 
   <footer>
-    <p>Designed &amp; built by Muntazir Mehdi · 2025 · Dubai, UAE</p>
+    <p>Designed &amp; built by Muntazir Mehdi · 2026</p>
   </footer>
 
   <script>
