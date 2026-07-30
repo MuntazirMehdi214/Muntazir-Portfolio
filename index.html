@@ -400,6 +400,23 @@ h1 .line2 {
       font-size: 0.68rem;
     }
 
+    /* CASE STUDY HIGHLIGHT */
+    .project-card.featured-case {
+      border-color: rgba(232,168,56,0.35);
+      background: linear-gradient(160deg, rgba(232,168,56,0.06), var(--card) 45%);
+    }
+    .case-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--green);
+      border: 1px solid rgba(61,214,140,0.3);
+      background: rgba(61,214,140,0.08);
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+    }
+
     /* CONTACT */
     .contact-grid {
       display: grid;
@@ -534,9 +551,9 @@ h1 .line2 {
         <span class="line2">Mehdi.</span>
       </h1>
       <p class="hero-desc">
-       Oracle NetSuite Techno-Functional Consultant having over 5 years of experience in ERP and 
-        4+ years of hands-on experience in NetSuite. I develop customizations like 
-        SuiteScript 2.x, SuiteFlow, and Celigo integrations for multi-entity and international 
+       Oracle NetSuite Techno-Functional Consultant having over 5 years of experience in ERP and
+        4+ years of hands-on experience in NetSuite. I develop customizations like
+        SuiteScript 2.x, SuiteFlow, and Celigo integrations for multi-entity and international
         customers, with a full stack experience in Laravel and React.
       </p>
       <div class="hero-cta">
@@ -609,15 +626,16 @@ h1 .line2 {
         <div class="timeline-item">
           <div class="job-header">
             <div class="job-title">NetSuite Techno-Functional Developer &amp; Administrator</div>
-            <span class="job-period">Feb 2023 — Present</span>
+            <span class="job-period">Jan 2022 — Present</span>
           </div>
           <div class="job-company">Tresbizz Computer Equipment Trading LLC — UAE (Remote)</div>
           <ul class="job-bullets">
             <li>Key techno-functional contact for NetSuite across a multi-entity company — gathering requirements from Sales, Procurement, and Finance and turning them into configuration and custom development.</li>
+            <li>Rebuilt a failing 3-way match control (total billed vs. total received at PO-line level), preventing $50K+ in payments for unreceived goods.</li>
             <li>Ran fit-gap analysis and customized forms, custom records/segments, and saved searches to match business-specific workflows.</li>
             <li>Owned end-to-end troubleshooting of a Shopify–NetSuite integration on Celigo (Integrator.io), keeping real-time two-way sync of orders, inventory, and customer data.</li>
             <li>Engineered SuiteScript 2.x Map/Reduce scripts for large-scale datasets, cutting batch processing time by ~40%.</li>
-            <li>Designed SuiteFlow workflows and approval processes for order fulfillment, replenishment, and shipping  removing 8+ hours of manual reconciliation per week.</li>
+            <li>Designed SuiteFlow workflows and approval processes for order fulfillment, replenishment, and shipping — removing 8+ hours of manual reconciliation per week.</li>
             <li>Administered roles, permissions, SuiteBundler deployments, and Sandbox-to-Production migrations with full functional documentation.</li>
             <li>Built Saved Searches, SuiteAnalytics Workbooks, and KPI dashboards for operational reporting and UAT validation.</li>
           </ul>
@@ -626,11 +644,11 @@ h1 .line2 {
         <div class="timeline-item">
           <div class="job-header">
             <div class="job-title">NetSuite &amp; Full Stack Developer</div>
-            <span class="job-period">2022 — Jan 2023</span>
+            <span class="job-period">Jan 2022 — Jan 2023 · Part-time</span>
           </div>
           <div class="job-company">Freelance — Remote</div>
           <ul class="job-bullets">
-            <li>Delivered and supported 10+ web, eCommerce, and ERP projects for international clients including CFA Institute, Paylocity, and Pacifica Beauty.</li>
+            <li>Delivered and supported 70+ web, eCommerce, and ERP projects for international clients including CFA Institute, Paylocity, and Pacifica Beauty.</li>
             <li>Provided client-facing consulting on SuiteScript customizations, workflows, and mass-data integrations.</li>
             <li>Built scalable REST APIs (Laravel) for mobile and third-party integrations.</li>
             <li>Integrated Stripe and PayPal payment gateways, handling PCI compliance considerations.</li>
@@ -640,21 +658,23 @@ h1 .line2 {
 
         <div class="timeline-item">
           <div class="job-header">
-            <div class="job-title">PHP Developer</div>
-            <span class="job-period">2020 — 2022</span>
+            <div class="job-title">PHP Developer / Team Lead</div>
+            <span class="job-period">Jul 2020 — Jan 2022</span>
           </div>
           <div class="job-company">WADIC — Lahore, Pakistan</div>
           <ul class="job-bullets">
+            <li>Led a project team of 4 developers — task assignment, code reviews, and client delivery.</li>
+            <li>Worked across 3 client projects in parallel spanning PHP, CakePHP, and Ruby on Rails codebases.</li>
+            <li>Built landing pages for sales teams, improving campaign turnaround and lead capture.</li>
             <li>Built interactive frontend dashboards with React.js and Redux, improving internal reporting efficiency.</li>
             <li>Integrated third-party APIs into Laravel backend services and supported cross-functional teams.</li>
-            <li>Worked with UI/UX designers to deliver responsive, accessible interfaces.</li>
           </ul>
         </div>
 
         <div class="timeline-item">
           <div class="job-header">
             <div class="job-title">Junior PHP Developer</div>
-            <span class="job-period">2020</span>
+            <span class="job-period">Jan 2020 — Jun 2020</span>
           </div>
           <div class="job-company">Asia Soles — Lahore, Pakistan</div>
           <ul class="job-bullets">
@@ -729,6 +749,8 @@ h1 .line2 {
             <span class="tag hot">JavaScript</span>
             <span class="tag hot">SQL</span>
             <span class="tag">PHP (Laravel)</span>
+            <span class="tag">CakePHP</span>
+            <span class="tag">Ruby on Rails</span>
             <span class="tag">Node.js</span>
             <span class="tag">React.js</span>
             <span class="tag">MySQL</span>
@@ -769,6 +791,20 @@ h1 .line2 {
       <div class="section-label">Portfolio</div>
       <h2 class="section-title">Featured Projects</h2>
       <div class="projects-grid">
+
+        <div class="project-card featured-case">
+          <div class="project-header">
+            <div class="project-name">3-Way Match Control Fix</div>
+            <span class="case-badge">$50K+ Saved</span>
+          </div>
+          <p class="project-desc">Vendor bills for unreceived goods were passing an "airtight" 3-way match workflow. Traced it to a binary receipt check (received = 0) that silently died after partial receipts. Rebuilt validation to compare total billed vs. total received per PO line — restoring payment holds and stopping $50K+ from going out the door.</p>
+          <div class="project-stack">
+            <span class="netsuite-badge">◆ NetSuite</span>
+            <span class="tag hot">SuiteFlow</span>
+            <span class="tag">Saved Searches</span>
+            <span class="tag">AP Controls</span>
+          </div>
+        </div>
 
         <div class="project-card">
           <div class="project-header">
